@@ -1,7 +1,7 @@
 <div align="center">
 
 # fakeProfile
-An userplugin for Equicord/Vencord modded clients
+An userplugin for Equicord/Vencord modded clients and alternative for [original fakeProfile plugin](https://github.com/gujarathisampath/fakeProfile).
 
 </div>
 
