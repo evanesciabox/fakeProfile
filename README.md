@@ -54,6 +54,9 @@ Remember that developer of this userplugin will not do PR to Vencord or Equicord
 
 4. Enjoy.
 
+## How to apply avatar, banner, nameplate and badges
+You need to join this [Discord server](https://discord.gg/bXRmrt7E38) and go to `#commands` channel to request something of these things.
+
 ## CSP moment
 In Vencord there's problem with CSP that it accepts only from mod-sided list and can be added in here with only modify CSP file. I don't know what happened with CSP now, but I'd recommend you use Equicord, which allows you allow hosts if it is not in mod-sided list.
 
