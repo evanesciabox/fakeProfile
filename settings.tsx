@@ -1,5 +1,20 @@
 import { definePluginSettings } from "@api/Settings";
 import { OptionType } from "@utils/types";
+import { Button } from "@components/Button";
+import { Notice } from "@components/Notice";
+import { useCspPermission } from "@utils/csp";
+import { API_URL, CDN_URL } from "./constants";
+
+function ApiUrlNotice({ url }: { url?: string; }) {
+    const [isAllowed, allow] = useCspPermission(url, ["connect-src", "img-src"], "fakeProfile");
+    if (isAllowed || !url) return null;
+
+    return (
+        <Notice variant="warning" action={<Button size="small" variant="secondary" onClick={allow}>Allow Host</Button>}>
+            Connections to {URL.parse(url)?.host} are blocked. Allow this host if you trust it, then restart Discord.
+        </Notice>
+    );
+}
 
 export const settings = definePluginSettings({
     nitroFirst: {
@@ -38,5 +53,13 @@ export const settings = definePluginSettings({
         type: OptionType.BOOLEAN,
         default: false,
         restartNeeded: true
+    },
+    apiUrlPermission: {
+        type: OptionType.COMPONENT,
+        component: () => <ApiUrlNotice url={API_URL} />
+    },
+    cdnUrlPermission: {
+        type: OptionType.COMPONENT,
+        component: () => <ApiUrlNotice url={CDN_URL} />
     }
 });
