@@ -10,11 +10,10 @@ Remember that developer of this userplugin will not do PR to Vencord or Equicord
 
 ## Installation
 > [!WARNING]
-> Before to install userplugin, you need a dev build of one modded client!!
+> ### Before to install userplugin, you need a dev build of one modded client!!
 >
-> To do build from source with Equicord: [check here](https://docs.equicord.org/installing/#building-from-source)
->
-> To do build from source with Vencord: [check here](https://docs.vencord.dev/installing/)
+> - To do build from source with Equicord: [check here](https://docs.equicord.org/installing/#building-from-source)
+> - To do build from source with Vencord: [check here](https://docs.vencord.dev/installing/)
 
 > [!NOTE]
 > Also check [CSP moment](#csp-moment) after installation and enabling plugin, when you reach out the problem with loading images and more.
@@ -58,17 +57,23 @@ Remember that developer of this userplugin will not do PR to Vencord or Equicord
 You need to join this [Discord server](https://discord.gg/bXRmrt7E38) and go to `#commands` channel to request something of these things.
 
 ## CSP moment
-In Vencord there's problem with CSP that it accepts only from mod-sided list and can be added in here with only modify CSP file. I don't know what happened with CSP now, but I'd recommend you use Equicord, which allows you allow hosts if it is not in mod-sided list.
+In Vencord there's problem with CSP that it accepts only from mod-sided list and can be added in here with only modify CSP file. I don't know what happened with CSP here right now, but I'd recommend you use Equicord, which allows you allow hosts if it is not in mod-sided list.
 
-- In Equicord you need just go to `Settings > Themes` allow domains: `https://evanesciabox.cc` and `https://storage.evanesciabox.cc`, then it says to reload your Discord. Do it. And it's done.
+In Equicord there's a system for plugin settings which allows custom hosts of any plugin, this system already applied in this plugin. Just what you need to do:
+- Go to plugin settings;
+- Allow these two hosts in plugin settings and restart your Discord after that:
+<img src="./docs/imgs/plugin_settings_csp.jpg" height="565" alt="Just go to plugin settings and you'll see by yourself the yellow window alert..." />
+- Done!
+
+Honestly, I didn't tested if this system existing on Vencord, but let me know if it does. It's quiet gay to have it in any PC. :)
 
 ## About API
 The plugin using *only* own domain API such as `https://evanesciabox.cc` and not using others and related *only* with this project.
 
 - This API stores only those data:
-    1. Users ID for rendering fakeProfile things.
-    2. Files are storing in `https://storage.evanesciabox.cc`.
+    1. Users ID for rendering fakeProfile things in `.json` format.
+    2. Files are storing in `https://storage.evanesciabox.cc` and image links are getting from API database.
 
-`https://evanesciabox.cc` (which will be named as EvanesciaBox next) is a Russian invite-only file exchanger and it's not linked with any suspicious/dangeours actions. About EvanesciaBox read here: https://evanesciabox.cc/about but it's on Russian, so I recommend to use DeepL as machine translator.
+`https://evanesciabox.cc` (which will be named as EvanesciaBox next) is a Russian invite-only file-sharing service and it's not linked with any suspicious/dangeours actions. About EvanesciaBox read here: https://evanesciabox.cc/about but it's on Russian, so I recommend to use DeepL as machine translator.
 
 If you have any questions about file-sharing service or the API, contact to developer of EvanesciaBox here: evanesciabox@proton.me or https://t.me/evanesciabox?direct
